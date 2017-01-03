@@ -1,0 +1,30 @@
+/* Bookmark */
+a{
+  vertical-align : middle;
+  border-radius: 5px;
+  margin : 2px;
+  text-decoration : none;
+}
+a.link{
+  display : block;
+  line-height : 42px;
+  text-align : left;
+  background: green;
+  color : white;
+  font-size : 16px;
+  font-weight : bold;
+  padding : 0px 0px 0px 12px;
+}
+a.sublink{
+  display : inline-block;
+  width : 120px;
+  line-height : 48px;
+  text-align : center;
+  background: lime;
+  color : black;
+  font-size : 14px;
+}
+
+/* PC向け変更点 */
+@media screen and (min-width:800px){
+}

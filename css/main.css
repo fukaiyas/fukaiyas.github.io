@@ -1,0 +1,20 @@
+*{
+  margin : 0px;
+  padding : 0px;
+}
+img{
+  vertical-align : bottom;
+}
+body{
+  max-width : 1200px;
+  margin-right : auto;
+  margin-left : auto;
+  font-size : 16px;
+  font-family : -apple-system, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'メイリオ', '游ゴシック Medium', meiryo, sans-serif;
+  background-color : #ddffff;
+  overflow-y: scroll;
+}
+
+/* PC向け変更点 */
+@media screen and (min-width:800px){
+}
