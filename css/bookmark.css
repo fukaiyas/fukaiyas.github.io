@@ -17,7 +17,7 @@ a.link{
 }
 a.sublink{
   display : inline-block;
-  width : 120px;
+  width : 116px;
   line-height : 48px;
   text-align : center;
   background: lime;
@@ -27,4 +27,8 @@ a.sublink{
 
 /* PC向け変更点 */
 @media screen and (min-width:800px){
+a.sublink{
+  width : 160px;
+  font-size : 16px;
+}
 }
