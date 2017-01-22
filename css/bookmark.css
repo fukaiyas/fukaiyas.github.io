@@ -5,7 +5,7 @@ a{
   margin : 2px;
   text-decoration : none;
 }
-a.link{
+.link{
   display : block;
   line-height : 42px;
   text-align : left;
@@ -15,7 +15,7 @@ a.link{
   font-weight : bold;
   padding : 0px 0px 0px 12px;
 }
-a.sublink{
+.sublink{
   display : inline-block;
   width : 116px;
   line-height : 48px;
