@@ -9,34 +9,39 @@
   var init = function(){
     var index = 0;
     var pages = document.getElementsByClassName("page");
-    console.log(pages.length);
-    pages[0].style = "display : block;";
+    pages[0].style.display = "block";
     document.onkeydown = function(e){
       if(event.keyCode == 39 || event.keyCode == 32){
         if(index < pages.length - 1){
-          pages[index].style = "display : none;";
+          pages[index].style.display = "none";
           index++;
-          pages[index].style = "display : block;";
+          pages[index].style.display = "block";
         }
       }else if(event.keyCode == 37){
         if(index > 0){
-          pages[index].style = "display : none;";
+          pages[index].style.display = "none";
           index--;
-          pages[index].style = "display : block;";
+          pages[index].style.display = "block";
         }
       }
     };
     document.onclick = function(e){
       if(index < pages.length - 1){
-        pages[index].style = "display : none;";
+          pages[index].style.display = "none";
         index++;
-        pages[index].style = "display : block;";
+          pages[index].style.display = "block";
       }
     };
   }
   </script>
   <style>
-  .page{ display : none; }
+  .page{
+    display : none;
+    width : 90%;
+  }
+  .page img {
+    width: 100%;
+  }
   </style>
 </head>
 <body onload="init();">
