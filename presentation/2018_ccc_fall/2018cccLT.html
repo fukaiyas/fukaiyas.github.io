@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>人生、気合いと具合</title>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <script>
+  var init = function(){
+    var index = 0;
+    var pages = document.getElementsByClassName("page");
+    console.log(pages.length);
+    pages[0].style = "display : block;";
+    document.onkeydown = function(e){
+      if(event.keyCode == 39 || event.keyCode == 32){
+        if(index < pages.length - 1){
+          pages[index].style = "display : none;";
+          index++;
+          pages[index].style = "display : block;";
+        }
+      }else if(event.keyCode == 37){
+        if(index > 0){
+          pages[index].style = "display : none;";
+          index--;
+          pages[index].style = "display : block;";
+        }
+      }
+    };
+    document.onclick = function(e){
+      if(index < pages.length - 1){
+        pages[index].style = "display : none;";
+        index++;
+        pages[index].style = "display : block;";
+      }
+    };
+  }
+  </script>
+  <style>
+  .page{ display : none; }
+  </style>
+</head>
+<body onload="init();">
+<script>
+document.open();
+for(i = 0; i < 18; i++){
+  var s = i + 1;
+  if(i < 9){
+    s = "0" + s;
+  }
+  document.write("<div class='page'><img src='2018cccLT_" + s + ".png'></div>");
+}
+document.close();
+</script>
+</body>
+</html>
