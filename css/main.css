@@ -14,6 +14,11 @@ body{
   background-color : #ddffff;
   overflow-y: scroll;
 }
+header{
+  font-size : 32px;
+  font-weight : bold;
+  font-family : -apple-system, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'メイリオ', '游ゴシック Medium', meiryo, sans-serif;
+}
 
 /* PC向け変更点 */
 @media screen and (min-width:800px){
