@@ -25,6 +25,10 @@
     .cloth {
       background-color : #99ee99;
     }
+    .total th {
+      font-weight : normal;
+      background-color : #ffffcc;
+    }
   </style>
 </head>
 <body>
@@ -34,19 +38,22 @@
   <div>
     <table>
       <tr><th colspan="6" class="title">汎用タイプ</th></tr>
-      <tr><th rowspan="2" class="cloth">試金石の装衣</th>
+      <tr><th rowspan="3" class="cloth">試金石の装衣</th>
           <td>攻撃+200</td><td>      </td><td>防御+400</td><td>      </td><td>        </td></tr>
-      <tr><td>        </td><td>HP+400</td><td>防御+200</td><td>HP+200</td><td>攻撃+200</td></tr>
+      <tr><td>        </td><td>HP+400</td><td>防御+200</td><td>HP+200</td><td>攻撃+100</td></tr>
+      <tr class="total"><th>合計</th><th>HP+600</th><th>攻撃+300</th><th>防御+600</th><th></th></tr>
 
-      <tr><th rowspan="3" class="cloth">防御強化の装衣</th>
+      <tr><th rowspan="4" class="cloth">防御強化の装衣</th>
           <td>防御+400</td><td>防御+200</td><td>        </td><td>        </td><td></td></tr>
       <tr><td>        </td><td>HP+200  </td><td>        </td><td>        </td><td></td></tr>
-      <tr><td>        </td><td>HP+400  </td><td>攻撃+200</td><td>防御+400</td><td></td></tr>
+      <tr><td>        </td><td>HP+200  </td><td>攻撃+200</td><td>防御+400</td><td></td></tr>
+      <tr class="total"><th>合計</th><th>HP+400</th><th>攻撃+200</th><th>防御+1000</th><th></th></tr>
 
-      <tr><th rowspan="3" class="cloth">耐久強化の装衣</th>
+      <tr><th rowspan="4" class="cloth">耐久強化の装衣</th>
           <td>        </td><td>      </td><td>HP+400  </td><td>自防UP(小)</td><td></td></tr>
       <tr><td>        </td><td>HP+200</td><td>        </td><td>          </td><td></td></tr>
       <tr><td>攻撃+100</td><td>HP+400</td><td>攻撃+100</td><td>          </td><td></td></tr>
+      <tr class="total"><th>合計</th><th>HP+1000</th><th>攻撃+200</th><th></th><th>自防UP(小)</th></tr>
     </table>
   </div>
 </section>
