@@ -12,6 +12,9 @@
       margin : 12px 4px;
       background-color : #fefefe;
     }
+    .roots {
+      width : 512px;
+    }
     th,td {
       padding : 2px;
       border : solid 1px black;
@@ -19,10 +22,12 @@
     .title {
       text-align : left;
       background-color : #bbbbff;
+      width : 400px;
     }
     .quest {
       text-align : right;
       background-color : #99ee99;
+      width : 36px;
     }
     .boss {
       text-align : right;
@@ -30,18 +35,140 @@
     }
     tr.lamp1 th {
       background-color : #ff4444;
-    } 
+    }
     tr.lamp1 td {
       background-color : #ffff88;
-    } 
+    }
   </style>
+  <script>
+  var init = function(){
+    var tables = document.getElementsByClassName("roots");
+    for(var i = 1; i < tables.length; i++){
+      var rows = tables[i].getElementsByTagName("tr");
+      rows[0].style.display = "table-row";
+      tables[i].onclick = function(e){
+        var targets = this.getElementsByTagName("tr");
+        for(var j = 1; j < targets.length; j++){
+          var dis = targets[j].style.display;
+          targets[j].style.display = dis == "none" ? "table-row" : "none";
+        }
+      };
+      for(var j = 1; j < rows.length; j++){
+        rows[j].style.display = i == 0 ? "table-row" : "none";
+      }
+    }
+  }
+  </script>
 </head>
-<body>
+<body onload="init();">
 <header>魔女の追憶</header>
 <main>
 <section>
   <div>
-    <table>
+    <table class="roots">
+      <tr><th colspan="4" class="title">冒険の1ページ (2020/9/17 - 2020/9/28)</th></tr>
+      <tr><th colspan="4" class="title">ルート選択 (ランプ 15 25 44 (56) 62 (75or76) 85 (90or91) (96))</th></tr>
+      <tr><th class="quest">1</th><td>欠片</td><td></td><td></td></tr>
+      <tr><th class="quest">2</th><td>打クー</td><td></td><td></td></tr>
+      <tr><th class="quest">3</th><td>スキップ券</td><td></td><td></td></tr>
+      <tr><th class="quest">4</th><td>アーデルハイド</td><td></td><td></td></tr>
+      <tr><th class="quest">5</th><td>本100</td><td></td><td></td></tr>
+      <tr><th class="quest">6</th><td>騎士300</td><td></td><td></td></tr>
+      <tr><th class="quest">7</th><td>欠片</td><td></td><td></td></tr>
+      <tr><th class="quest">8</th><td>クーボックス</td><td>3000G</td><td></td></tr>
+      <tr><th class="quest">9</th><td>欠片</td><td>AP10</td><td></td></tr>
+      <tr><th class="quest">10</th><td>欠片</td><td>クーボックス</td><td></td></tr>
+      <tr><th class="quest">11</th><td>モーリス</td><td>本100</td><td></td></tr>
+      <tr><th class="quest">12</th><td>デフロット</td><td>スキップ券</td><td></td></tr>
+      <tr><th class="quest">13</th><td>アーデルハイド</td><td>騎士500</td><td></td></tr>
+      <tr><th class="quest">14</th><td>アーデルハイド</td><td>AP30</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">15</th><td>聖王石</td><td>遠クー</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">16</th><td>モーリス</td><td>本100</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">17</th><td>欠片</td><td>打クー</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">18</th><td>アーデルハイド</td><td>本300</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">19</th><td>マリユス</td><td>デフロット</td><td></td></tr>
+      <tr><th class="quest">20</th><td>欠片</td><td>アーデルハイド</td><td>モーリス</td></tr>
+      <tr><th class="quest">21</th><td>本100</td><td>クーボックス</td><td></td></tr>
+      <tr><th class="quest">22</th><td>BP50</td><td>スキップ券</td><td></td></tr>
+      <tr><th class="quest">23</th><td>欠片</td><td>モーリス</td><td></td></tr>
+      <tr><th class="quest">24</th><td>本300</td><td>ガチャ券</td><td>斬クー</td></tr>
+      <tr class="lamp1"><th class="quest">25</th><td>ランプ</td><td>モーリス</td><td>本100</td></tr>
+      <tr class="lamp1"><th class="quest">26</th><td>欠片</td><td>モーリス</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">27</th><td>ガチャ券</td><td>デフロット</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">28</th><td>欠片</td><td>本100</td><td>AP50</td></tr>
+      <tr class="lamp1"><th class="quest">29</th><td>欠片</td><td>聖王石</td><td>アーデルハイド</td></tr>
+      <tr><th class="quest">30</th><td>モーリス</td><td>本300</td><td>クーボックス</td></tr>
+      <tr><th class="quest">31</th><td>アーデルハイド</td><td></td><td></td></tr>
+      <tr><th class="quest">32</th><td>欠片</td><td></td><td></td></tr>
+      <tr><th class="quest">33</th><td>デフロット</td><td>本100</td><td></td></tr>
+      <tr><th class="quest">34</th><td>クーボックス</td><td>突クー</td><td></td></tr>
+      <tr><th class="quest">35</th><td>？</td><td>？</td><td></td></tr>
+      <tr><th class="quest">36</th><td>欠片</td><td></td><td></td></tr>
+      <tr><th class="quest">37</th><td>デフロット</td><td>5000G</td><td></td></tr>
+      <tr><th class="quest">38</th><td>本100</td><td>？</td><td></td></tr>
+      <tr><th class="quest">39</th><td>欠片</td><td>クーボックス</td><td></td></tr>
+      <tr><th class="quest">40</th><td>アーデルハイド</td><td>？</td><td>？</td></tr>
+      <tr><th class="quest">41</th><td>本300</td><td></td><td></td></tr>
+      <tr><th class="quest">42</th><td>欠片</td><td>3000G</td><td></td></tr>
+      <tr><th class="quest">43</th><td>デフロット</td><td>5000G</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">44</th><td>アーデルハイド</td><td>斬クー</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">45</th><td>ランプ</td><td>ガチャ券</td><td>クーボックス</td></tr>
+      <tr class="lamp1"><th class="quest">46</th><td>本300</td><td></td><td></td></tr>
+      <tr class="lamp1"><th class="quest">47</th><td>モーリス</td><td>AP10</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">48</th><td>欠片</td><td>クーボックス</td><td></td></tr>
+      <tr><th class="quest">49</th><td>本100</td><td>スキップ券</td><td></td></tr>
+      <tr><th class="quest">50</th><td>？</td><td>？</td><td>？</td></tr>
+      <tr><th class="quest">51</th><td>モーリス</td><td></td><td></td></tr>
+      <tr><th class="quest">52</th><td>？</td><td></td><td></td></tr>
+      <tr><th class="quest">53</th><td>？</td><td>？</td><td></td></tr>
+      <tr><th class="quest">54</th><td>本100</td><td>クーボックス</td><td>3000G</td></tr>
+      <tr><th class="quest">55</th><td>アーデルハイド</td><td>デフロット</td><td>AP50</td></tr>
+      <tr><th class="quest">56</th><td>？</td><td></td><td></td></tr>
+      <tr><th class="quest">57</th><td>アーデルハイド</td><td></td><td></td></tr>
+      <tr><th class="quest">58</th><td>？</td><td>？</td><td></td></tr>
+      <tr><th class="quest">59</th><td>欠片</td><td>本100</td><td>クーボックス</td></tr>
+      <tr><th class="quest">60</th><td>モーリス</td><td>？</td><td>？</td></tr>
+      <tr><th class="quest">61</th><td>クーボックス</td><td></td><td></td></tr>
+      <tr class="lamp1"><th class="quest">62</th><td>欠片</td><td>デフロット</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">63</th><td>モーリス</td><td>本100</td><td></td></tr>
+      <tr class="lamp1"><th class="quest">64</th><td>欠片</td><td>アーデルハイド</td><td>モーリス</td></tr>
+      <tr class="lamp1"><th class="quest">65</th><td>ランプ</td><td>ガチャ券</td><td>デフロット</td></tr>
+      <tr class="lamp1"><th class="quest">66</th><td>欠片</td><td></td><td></td></tr>
+      <tr><th class="quest">67</th><td>3000G</td><td>？</td><td></td></tr>
+      <tr><th class="quest">68</th><td>？</td><td>？</td><td></td></tr>
+      <tr><th class="quest">69</th><td>アーデルハイド</td><td>スキップ券</td><td>？</td></tr>
+      <tr><th class="quest">70</th><td>欠片</td><td>デフロット</td><td>クーボックス</td></tr>
+      <tr><th class="quest">71</th><td>AP30</td><td>？</td><td></td></tr>
+      <tr><th class="quest">72</th><td>本300</td><td>3000G</td><td></td></tr>
+      <tr><th class="quest">73</th><td>ガチャ券</td><td>？</td><td></td></tr>
+      <tr><th class="quest">74</th><td>デフロット</td><td>？</td><td>？</td></tr>
+      <tr><th class="quest">75</th><td>欠片</td><td>モーリス</td><td>デフロット</td></tr>
+
+
+      <tr><th colspan="4" class="title">ボス報酬</th></tr>
+      <tr><th class="boss">5</th><td>本100</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">10</th><td>欠片</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">15</th><td>本200</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">20</th><td>欠片</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">25</th><td>？</td><td>？</td><td></td></tr>
+      <tr><th class="boss">30</th><td>欠片</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">35</th><td>本500</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">40</th><td>欠片</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">45</th><td>本650</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">50</th><td>欠片</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">55</th><td>本800</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">60</th><td>欠片</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">65</th><td>本1000</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">70</th><td>欠片</td><td>ガチャ券</td><td></td></tr>
+      <tr><th class="boss">75</th><td></td><td></td><td></td></tr>
+      <tr><th class="boss">80</th><td></td><td></td><td></td></tr>
+      <tr><th class="boss">85</th><td></td><td></td><td></td></tr>
+      <tr><th class="boss">90</th><td></td><td></td><td></td></tr>
+      <tr><th class="boss">95</th><td></td><td></td><td></td></tr>
+      <tr><th class="boss">100</th><td></td><td></td><td></td></tr>
+    </table>
+
+    <table class="roots">
       <tr><th colspan="4" class="title">浮遊島(マゴニア)からの来訪者 (2020/6/22 - 2020/7/3)</th></tr>
       <tr><th colspan="4" class="title">ルート選択 (ランプ 17 25 38 60 82 89)</th></tr>
       <tr><th class="quest">1</th><td>欠片</td><td></td><td></td></tr>
@@ -167,7 +294,7 @@
       <tr><th class="boss">100</th><td>欠片x3</td><td>ガチャ券</td><td></td></tr>
     </table>
 
-    <table>
+    <table class="roots">
       <tr><th colspan="4" class="title">ソロネと憤激の森 (2020/3/4 - 2020/3/13)</th></tr>
       <tr><th colspan="4" class="title">ルート選択 (ランプ 7 26 (53) 68 86)</th></tr>
       <tr><th class="quest">1</th><td>ガチャ券</td><td></td><td></td></tr>
