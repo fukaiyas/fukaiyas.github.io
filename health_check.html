@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>人生、気合いと具合</title>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <style>
+    table {
+      border-collapse : collapse;
+      border-spacing : 0px;
+      margin : 12px 4px;
+      background-color : #fefefe;
+      font-size : 20px;
+    }
+    th {
+      text-align : center;
+      background-color : #bbffbb;
+    }
+    td {
+      text-align : right;
+      min-width : 64px;
+    }
+    th,td {
+      padding : 4px;
+      border : solid 1px black;
+    }
+    div#graph {
+      width : 400px;
+      height : 160px;
+      border : solid 1px black;
+      padding : 0px;
+    }
+    
+  </style>
+  <script>
+  var init = function(){
+    var b = document.getElementById("graph_button");
+    b.onclick = function(){
+      if(document.getElementById("base").style.display == "block"){
+        document.getElementById("base").style.display = "none";
+        return;
+      }
+
+      document.getElementById("base").style.display = "block";
+      var cv = document.getElementById("graph");
+
+      var recs = document.getElementsByClassName("health_record");
+      var left_pos = 0;
+      Array.from(recs).forEach(rec => {
+        var tds = rec.getElementsByTagName("td");
+        var weight = tds[0].textContent;
+        var mp_t = tds[1].textContent;
+        var mp_b = tds[2].textContent;
+        var np_t = tds[3].textContent;
+        var np_b = tds[4].textContent;
+
+        var mp = document.createElement("div");
+        mp.style.backgroundColor = "#22AA22";
+        mp.style.width = "2px";
+        mp.style.height = (mp_t - mp_b) + "px";
+        mp.style.position = "absolute";
+        mp.style.left = left_pos + "px";
+        mp.style.top = (200 - mp_t) + "px";
+        cv.appendChild(mp);
+
+        if(np_t){
+          var np = document.createElement("div");
+          np.style.backgroundColor = "#22AA22";
+          np.style.width = "2px";
+          np.style.height = (np_t - np_b) + "px";
+          np.style.position = "absolute";
+          np.style.left = (left_pos + 2) + "px";
+          np.style.top = (200 - np_t) + "px";
+          cv.appendChild(np);
+        }
+
+        var wp = document.createElement("div");
+        wp.style.backgroundColor = "#2222CC";
+        wp.style.width = "4px";
+        wp.style.height = "3px";
+        wp.style.position = "absolute";
+        wp.style.left = left_pos + "px";
+        wp.style.top = (160 - weight) + "px";
+        cv.appendChild(wp);
+
+        left_pos = left_pos + 4;
+      });
+    };
+  }
+  </script>
+</head>
+<body onload="init();">
+<header>Health Check</header>
+<main>
+  <button id="graph_button">graph</button>
+  <div id="base" style="display:none;">
+    <div style="color:#2222CC">weight</div>
+    <div style="color:#22AA22">blood pressure</div>
+    <div id="graph" style="position:relative;"></div>
+  </div>
+  <table>
+    <tr><th rowspan="3"></th><th rowspan="3">weight</th> <th colspan="4">blood pressure</th>                    </tr>
+    <tr>                                                 <th colspan="2">morning</th><th colspan="2">night</th> </tr>
+    <tr>                                                 <th>top</th><th>bottom</th> <th>top</th><th>bottom</th></tr>
+<!--
+    <tr class="health_record"><th></th><td></td><td></td><td></td><td></td><td></td></tr>
+-->
+    <tr class="health_record"><th>11/30</th><td>77.6</td><td>144</td><td>106</td><td>150</td><td>104</td></tr>
+  </table>
+  <br/><a href="/index.html" style="text-decoration : underline;">TOP</a>
+</main>
+<footer></footer>
+</body>
+</html>
