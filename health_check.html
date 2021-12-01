@@ -47,24 +47,27 @@
 
       var recs = document.getElementsByClassName("health_record");
       var left_pos = 0;
-      Array.from(recs).forEach(rec => {
+      Array.from(recs).reverse().forEach(rec => {
         var tds = rec.getElementsByTagName("td");
-        var weight = tds[0].textContent;
-        var mp_t = tds[1].textContent;
-        var mp_b = tds[2].textContent;
-        var np_t = tds[3].textContent;
-        var np_b = tds[4].textContent;
+        var weight = tds[0].textContent.trim();
+        var mp_t = tds[1].textContent.trim();
+        var mp_b = tds[2].textContent.trim();
+        var np_t = tds[3].textContent.trim();
+        var np_b = tds[4].textContent.trim();
+        var waist = tds[5].textContent.trim();
 
-        var mp = document.createElement("div");
-        mp.style.backgroundColor = "#22AA22";
-        mp.style.width = "2px";
-        mp.style.height = (mp_t - mp_b) + "px";
-        mp.style.position = "absolute";
-        mp.style.left = left_pos + "px";
-        mp.style.top = (200 - mp_t) + "px";
-        cv.appendChild(mp);
+        if(mp_t && mp_t != "-"){
+          var mp = document.createElement("div");
+          mp.style.backgroundColor = "#22AA22";
+          mp.style.width = "2px";
+          mp.style.height = (mp_t - mp_b) + "px";
+          mp.style.position = "absolute";
+          mp.style.left = left_pos + "px";
+          mp.style.top = (200 - mp_t) + "px";
+          cv.appendChild(mp);
+        }
 
-        if(np_t){
+        if(np_t && np_t != "-"){
           var np = document.createElement("div");
           np.style.backgroundColor = "#22AA22";
           np.style.width = "2px";
@@ -75,14 +78,27 @@
           cv.appendChild(np);
         }
 
-        var wp = document.createElement("div");
-        wp.style.backgroundColor = "#2222CC";
-        wp.style.width = "4px";
-        wp.style.height = "3px";
-        wp.style.position = "absolute";
-        wp.style.left = left_pos + "px";
-        wp.style.top = (160 - weight) + "px";
-        cv.appendChild(wp);
+        if(waist && waist != "-"){
+          var ws = document.createElement("div");
+          ws.style.backgroundColor = "#CC2222";
+          ws.style.width = "4px";
+          ws.style.height = "3px";
+          ws.style.position = "absolute";
+          ws.style.left = left_pos + "px";
+          ws.style.top = (160 - waist) + "px";
+          cv.appendChild(ws);
+        }
+
+        if(weight && weight != "-"){
+          var wp = document.createElement("div");
+          wp.style.backgroundColor = "#2222CC";
+          wp.style.width = "4px";
+          wp.style.height = "3px";
+          wp.style.position = "absolute";
+          wp.style.left = left_pos + "px";
+          wp.style.top = (160 - weight) + "px";
+          cv.appendChild(wp);
+        }
 
         left_pos = left_pos + 4;
       });
@@ -95,18 +111,21 @@
 <main>
   <button id="graph_button">graph</button>
   <div id="base" style="display:none;">
-    <div style="color:#2222CC">weight</div>
-    <div style="color:#22AA22">blood pressure</div>
+    <div style="color:#2222CC;font-weight:bold;">weight</div>
+    <div style="color:#22AA22;font-weight:bold;">blood pressure</div>
+    <div style="color:#CC2222;font-weight:bold;">waist</div>
     <div id="graph" style="position:relative;"></div>
   </div>
   <table>
-    <tr><th rowspan="3"></th><th rowspan="3">weight</th> <th colspan="4">blood pressure</th>                    </tr>
-    <tr>                                                 <th colspan="2">morning</th><th colspan="2">night</th> </tr>
-    <tr>                                                 <th>top</th><th>bottom</th> <th>top</th><th>bottom</th></tr>
+    <tr><th rowspan="3"></th><th rowspan="3">weight (kg)</th><th colspan="4">blood pressure (mmHg)</th>           <th rowspan="3">waist (cm)</th></tr>
+    <tr>                                                     <th colspan="2">morning</th><th colspan="2">night</th> </tr>
+    <tr>                                                     <th>top</th><th>bottom</th> <th>top</th><th>bottom</th></tr>
 <!--
-    <tr class="health_record"><th></th><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="health_record"><th> </th><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
 -->
-    <tr class="health_record"><th>11/30</th><td>77.6</td><td>144</td><td>106</td><td>150</td><td>104</td></tr>
+    <tr class="health_record"><th>12/2 </th><td>77.3</td><td>129</td><td>96 </td><td>   </td><td>   </td><td>95.5</td></tr>
+    <tr class="health_record"><th>12/1 </th><td>77.0</td><td>142</td><td>101</td><td> - </td><td> - </td><td>95.5</td></tr>
+    <tr class="health_record"><th>11/30</th><td>77.6</td><td>144</td><td>106</td><td>150</td><td>104</td><td> -  </td></tr>
   </table>
   <br/><a href="/index.html" style="text-decoration : underline;">TOP</a>
 </main>
