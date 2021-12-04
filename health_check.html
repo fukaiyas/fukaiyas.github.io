@@ -58,23 +58,29 @@
 
         if(mp_t && mp_t != "-"){
           var mp = document.createElement("div");
-          mp.style.backgroundColor = "#22AA22";
+          mp.style.backgroundColor = "#88DD88";
           mp.style.width = "2px";
           mp.style.height = (mp_t - mp_b) + "px";
           mp.style.position = "absolute";
           mp.style.left = left_pos + "px";
           mp.style.top = (200 - mp_t) + "px";
+          mp.style.borderWidth = "5px 0px";
+          mp.style.borderColor = "#22AA22";
+          mp.style.borderStyle = "solid";
           cv.appendChild(mp);
         }
 
         if(np_t && np_t != "-"){
           var np = document.createElement("div");
-          np.style.backgroundColor = "#22AA22";
+          np.style.backgroundColor = "#88DD88";
           np.style.width = "2px";
           np.style.height = (np_t - np_b) + "px";
           np.style.position = "absolute";
           np.style.left = (left_pos + 2) + "px";
           np.style.top = (200 - np_t) + "px";
+          np.style.borderWidth = "5px 0px";
+          np.style.borderColor = "#22AA22";
+          np.style.borderStyle = "solid";
           cv.appendChild(np);
         }
 
@@ -123,7 +129,8 @@
 <!--
     <tr class="health_record"><th> </th><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
 -->
-    <tr class="health_record"><th>12/3 </th><td>77.0</td><td>143</td><td>103</td><td> </td><td> </td><td>95.5</td></tr>
+    <tr class="health_record"><th>12/4 </th><td>76.3</td><td>137</td><td>95</td><td> </td><td> </td><td>95</td></tr>
+    <tr class="health_record"><th>12/3 </th><td>77.0</td><td>143</td><td>103</td><td>136</td><td>95</td><td>95.5</td></tr>
     <tr class="health_record"><th>12/2 </th><td>77.3</td><td>129</td><td>96 </td><td>155</td><td>114</td><td>95.5</td></tr>
     <tr class="health_record"><th>12/1 </th><td>77.0</td><td>142</td><td>101</td><td> - </td><td> - </td><td>95.5</td></tr>
     <tr class="health_record"><th>11/30</th><td>77.6</td><td>144</td><td>106</td><td>150</td><td>104</td><td> -  </td></tr>
