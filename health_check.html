@@ -45,6 +45,9 @@
       document.getElementById("base").style.display = "block";
       var cv = document.getElementById("graph");
 
+      var exists = function(v){
+         return v && v 	!= "-";
+      };
       var recs = document.getElementsByClassName("health_record");
       var left_pos = 0;
       Array.from(recs).reverse().forEach(rec => {
@@ -56,7 +59,7 @@
         var np_b = tds[4].textContent.trim();
         var waist = tds[5].textContent.trim();
 
-        if(mp_t && mp_t != "-"){
+        if(exists(mp_t)){
           var mp = document.createElement("div");
           mp.style.backgroundColor = "#88DD88";
           mp.style.width = "2px";
@@ -70,7 +73,7 @@
           cv.appendChild(mp);
         }
 
-        if(np_t && np_t != "-"){
+        if(exists(np_t)){
           var np = document.createElement("div");
           np.style.backgroundColor = "#88DD88";
           np.style.width = "2px";
@@ -84,25 +87,25 @@
           cv.appendChild(np);
         }
 
-        if(waist && waist != "-"){
+        if(exists(waist)){
           var ws = document.createElement("div");
           ws.style.backgroundColor = "#CC2222";
           ws.style.width = "4px";
           ws.style.height = "3px";
           ws.style.position = "absolute";
           ws.style.left = left_pos + "px";
-          ws.style.top = (160 - waist) + "px";
+          ws.style.top = (800 - waist * 8) + "px";
           cv.appendChild(ws);
         }
 
-        if(weight && weight != "-"){
+        if(exists(weight)){
           var wp = document.createElement("div");
           wp.style.backgroundColor = "#2222CC";
           wp.style.width = "4px";
           wp.style.height = "3px";
           wp.style.position = "absolute";
           wp.style.left = left_pos + "px";
-          wp.style.top = (160 - weight) + "px";
+          wp.style.top = (700 - weight * 8) + "px";
           cv.appendChild(wp);
         }
 
@@ -129,7 +132,7 @@
 <!--
     <tr class="health_record"><th> </th><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
 -->
-    <tr class="health_record"><th>12/19</th><td>76.6</td><td>119</td><td>87 </td><td> </td><td> </td><td>95.5</td></tr>
+    <tr class="health_record"><th>12/19</th><td>76.6</td><td>119</td><td>87 </td><td>132</td><td>92 </td><td>95.5</td></tr>
     <tr class="health_record"><th>12/18</th><td>76.2</td><td>134</td><td>96 </td><td> - </td><td> - </td><td>94.5</td></tr>
     <tr class="health_record"><th>12/17</th><td>75.9</td><td>134</td><td>92 </td><td>141</td><td>103</td><td>95  </td></tr>
     <tr class="health_record"><th>12/16</th><td>76.3</td><td>133</td><td>93 </td><td>139</td><td>99 </td><td>95  </td></tr>
