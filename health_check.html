@@ -50,7 +50,7 @@
       };
       var recs = document.getElementsByClassName("health_record");
       var left_pos = 0;
-      Array.from(recs).reverse().forEach(rec => {
+      Array.from(recs).reverse().slice(-100).forEach(rec => {
         var tds = rec.getElementsByTagName("td");
         var weight = tds[0].textContent.trim();
         var mp_t = tds[1].textContent.trim();
@@ -118,7 +118,7 @@
 <body onload="init();">
 <header>Health Check</header>
 <main>
-  <button id="graph_button">graph</button>
+  <button id="graph_button">graph (recent 100 days)</button>
   <div id="base" style="display:none;">
     <div style="color:#2222CC;font-weight:bold;">weight</div>
     <div style="color:#22AA22;font-weight:bold;">blood pressure</div>
