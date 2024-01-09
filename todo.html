@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html  lang="ja">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -8,7 +8,7 @@
   <style>
     table {
       border-collapse : collapse;
-      border-spacing : 0px;
+      border-spacing : 0;
       margin : 12px 4px;
       background-color : #fefefe;
       font-size : 20px;
@@ -31,13 +31,13 @@
     }
   </style>
   <script>
-  var init = function(){
-    var tables = document.getElementsByTagName("table");
-    for(var i = 0; i < tables.length; i++){
-      var bt = tables[i].getElementsByTagName("button")[0];
-      var checks = tables[i].getElementsByTagName("input");
-      bt.onclick = function(e){
-        for(var j = 0; j < checks.length; j++){
+  const init = function(){
+    const tables = document.getElementsByTagName("table");
+    for(let i = 0; i < tables.length; i++){
+      const bt = tables[i].getElementsByTagName("button")[0];
+      const checks = tables[i].getElementsByTagName("input");
+      bt.onclick = function(){
+        for(let j = 0; j < checks.length; j++){
           if(!checks[j].checked){
             alert("!!!!!!!! NG !!!!!!!!");
             return;
@@ -53,17 +53,14 @@
 <header>TODO List</header>
 <main>
   <table>
-    <tr><th>サテライト出勤</th>      <th><button>確認</button></th></tr>
-    <tr><td>SPC</td>                 <td><input type="checkbox"/></td></tr>
-    <tr><td>SPC電源ケーブル</td>     <td><input type="checkbox"/></td></tr>
-    <tr><td>キーボード</td>          <td><input type="checkbox"/></td></tr>
-    <tr><td>マウス</td>              <td><input type="checkbox"/></td></tr>
-    <tr><td>iPadAir</td>             <td><input type="checkbox"/></td></tr>
-    <tr><td>ApplePencil</td>         <td><input type="checkbox"/></td></tr>
-    <tr><td>個人スマホx2</td>        <td><input type="checkbox"/></td></tr>
-    <tr><td>社用スマホ</td>          <td><input type="checkbox"/></td></tr>
-    <tr><td>スマホ充電ケーブル</td>  <td><input type="checkbox"/></td></tr>
-    <tr><td>スマホイヤホン</td>      <td><input type="checkbox"/></td></tr>
+    <tr><th>物理出社</th>            <th><button>確認</button></th></tr>
+    <tr><td>SPC</td>                 <td><input type="checkbox" title="check"/></td></tr>
+    <tr><td>SPC電源ケーブル</td>     <td><input type="checkbox" title="check"/></td></tr>
+    <tr><td>キーボード</td>          <td><input type="checkbox" title="check"/></td></tr>
+    <tr><td>個人スマホ</td>          <td><input type="checkbox" title="check"/></td></tr>
+    <tr><td>社用スマホ</td>          <td><input type="checkbox" title="check"/></td></tr>
+    <tr><td>スマホ充電ケーブル</td>  <td><input type="checkbox" title="check"/></td></tr>
+    <tr><td>スマホイヤホン</td>      <td><input type="checkbox" title="check"/></td></tr>
   </table>
   <br/><a href="/index.html" style="text-decoration : underline;">TOP</a>
 </main>
