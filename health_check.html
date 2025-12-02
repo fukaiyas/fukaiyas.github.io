@@ -113,9 +113,10 @@
       });
     };
   }
+  window.addEventListener("load", init);
   </script>
 </head>
-<body onload="init();">
+<body>
 <header>Health Check</header>
 <main>
   <button id="graph_button">graph (recent 100 days)</button>
@@ -130,6 +131,7 @@
     <tr>                                                    <th colspan="2">morning</th><th colspan="2">night</th> </tr>
     <tr>                                                    <th>top</th><th>bottom</th> <th>top</th><th>bottom</th></tr>
 
+    <tr class="health_record"><th>2025/12/3 </th><td>74.2</td><td> - </td><td> - </td><td> - </td><td> - </td><td> -  </td></tr>
     <tr class="health_record"><th>2025/12/2 </th><td>74.5</td><td> - </td><td> - </td><td> - </td><td> - </td><td> -  </td></tr>
     <tr class="health_record"><th>2025/12/1 </th><td>74.8</td><td> - </td><td> - </td><td> - </td><td> - </td><td> -  </td></tr>
     <tr class="health_record"><th>2025/11/30</th><td>74.9</td><td> - </td><td> - </td><td> - </td><td> - </td><td> -  </td></tr>
