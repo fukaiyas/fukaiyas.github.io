@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <title>JEP 533: Structured Concurrency (Seventh Preview)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script>
+    window.onload = function() {
+        const pages = document.getElementsByClassName('page');
+        pages[0].style.display = "block";
+        var index = 0;
+        document.onkeydown = function(e) {
+            if (e.key === "ArrowRight" && index < pages.length - 1) {
+                pages[index].style.display = "none";
+                index++;
+                pages[index].style.display = "block";
+            }
+            if (e.key === "ArrowLeft" && index > 0) {
+                pages[index].style.display = "none";
+                index--;
+                pages[index].style.display = "block";
+            }
+        }
+        document.onclick = function(e) {
+            if (e.x > 200 && index < pages.length - 1) {
+                pages[index].style.display = "none";
+                index++;
+                pages[index].style.display = "block";
+            } else if (e.x < 200 && index > 0) {
+                pages[index].style.display = "none";
+                index--;
+                pages[index].style.display = "block";
+            }
+        }
+    };
+    hljs.highlightAll();
+  </script>
+  <style>
+      body{
+          margin: 64px 128px;
+          font-size : 36px;
+          font-family : 'メイリオ', 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', meiryo, sans-serif;
+          background-color : #eeffff;
+      }
+      h1 {
+          color : #2222CC;
+          font-size: 48px;
+      }
+      h2 {
+          color : #101010;
+          font-size: 40px;
+      }
+      .page{
+          display : none;
+          margin : 8px;
+      }
+</style>
+</head>
+<body>
+  <h1>JEP 533: Structured Concurrency (7th Preview)</h1>
+  <div class="page" style="text-align: right; vertical-align: middle; height: 100%;">
+    <div style="height: 200px;">JJUG ナイトセミナー (2026/9/30)</div>
+    <div><img src="my_icon.png" alt="自分のアイコン"></div>
+    <div>ふかい やすゆき (@fukai_yas)</div>
+  </div>
+  <div class="page">
+    <h2>Structured Concurrency の概要</h2>
+
+  </div>
+  <div class="page">
+    <pre><code class="java">
+      System.out.println("Hello, World!");
+    </code></pre>
+  </div>
+</body>
+</html>
